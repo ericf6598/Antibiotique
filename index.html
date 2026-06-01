@@ -128,6 +128,7 @@
       background-color: white;
       font-family: inherit;
       transition: all 0.2s;
+	  font-style: italic;
     }
 
     select:focus {
@@ -319,7 +320,6 @@
       <button class="info-btn" id="infoBtn">ⓘ À propos</button>
     </div>
     <div class="intro">
-      <strong>📋 Aide à la décision</strong><br>
       Cette application permet de visualiser le profil de résistance naturelle aux antibiotiques des principales espèces bactériennes impliquées en pathologie humaine (plus de 120 espèces). Elle ne prend pas en compte les résistances acquises.<br><br>
       <strong>Référentiels :</strong> CA-SFM/EUCAST 2025 v1.1, EUCAST Expected resistant phenotypes v1.2, EUCAST Expected susceptible phenotypes v1.1.<br><br>
       <strong>Légende :</strong> Abs = Absence de résistance naturelle (sensible), SFP = Sensible à forte posologie, R = Résistant, Rbn = Résistance de bas niveau, V = Variable.<br><br>
@@ -445,17 +445,17 @@ const speciesGroups = {
   "Anaérobie à Gram positif" : ["Actinomyces spp.", "Arachnia spp. (anc. Pseudopropionibacterium)", "Clostridium argentinense", "Clostridium baratii", "Clostridium butyricum", "Clostridium novyi", "Clostridium paraputrificum", "Clostridium septicum", "Clostridium sordellii", "Clostridium subterminale", "Clostridium tertium", "Lactobacillus casei", "Lactobacillus paracasei", "Lactobacillus rhamnosus", "Lactiplantibacillus plantarum", "Levilactobacillus brevis", "Ligilactobacillus animalis", "Ligilactobacillus salivarius", "Limosilactobacillus antri", "Limosilactobacillus fermentum", "Limosilactobacillus mucosae", "Limosilactobacillus reuteri", "Limosilactobacillus vaginalis", "Weissella confusa (anc. Lactobacillus confusus)", "Lactobacillus spp.", "Propionibacterium spp.", "Cutibacterium spp.", "Acidipropionibacterium spp.", "Arachnia spp. (anc.Pseudopropionibacterium)", "Clostridioides difficile", "Clostridium innocuum", "Thomasclavelia ramosa (anc. Clostridium ramosum)", "Eggerthella lenta", "Enterocloster aldenensis (anc. Clostridium aldenensis)", "Enterocloster boltae (anc. Clostridium boltae)", "Enterocloster citroniae (anc. Clostridium citroniae)", "Enterocloster clostridioformis", "Enterocloster lavalensis", "Hungatella hathewayi", "Mobiluncus spp.", "Ruminococcus gauvreauii"]
 };
 const groupNotes = {
-  "Enterobacterales": "<u>Les Enterobacterales sont naturellement résistantes aux antibiotiques suivants :</u> • Pénicilline G, • Oxacilline, • Macrolides (sauf azithromycine pour le traitement des diarrhées à Salmonella et à Shigella), • Kétolides, • Lincosamides, • Streptogramines, • Acide fusidique, • Glycopeptides, • Oxazolidinones, • Lipoglycopeptides, • Rifampicine.",
-  "Bacille à Gram négatif non fermentaire": "<u>Les Bacilles à Gram négatifs non-fermentaires sont naturellement résistants aux antibiotiques suivants :</u> • Pénicilline G, • Aminopénicillines, • Oxacilline, • Céphalosporines de 1re génération (C1G), • Céphalosporines de 2e génération (C2G), • Céfotaxime, • Ceftriaxone, • Ertapénème, • Macrolides, • Kétolides, • Lincosamides, • Streptogramines, • Acide fusidique, • Glycopeptides, • Oxazolidinones, • Lipoglycopeptides.",
-  "Aeromonas": "<u>Les Aeromonas sont naturellement résistants aux antibiotiques suivants :</u> • Pénicilline G, • Oxacilline, • Macrolides, • Kétolides, • Lincosamides, • Streptogramines, • Acide fusidique, • Glycopeptides, • Oxazolidinones, • Lipoglycopeptides, • Rifampicine.",
-  "Campylobacter": "<u>Les Campylobacter sont naturellement résistants à :</u> • Oxacilline, • Céphalosporines, • Acide fusidique, • Glycopeptides, • Oxazolidinones, • Colistine, • lipoglycopeptides.",
-  "Bacille à Gram positif": "<u>Les bactéries Gram-positives sont naturellement résistantes à :</u> • Mécillinam, • Aztréonam, • Témocilline, • Acide nalidixique, • Colistine.",
-  "Enterocoque": "<u>Les entérocoques sont naturellement résistants à :</u> • Pénicilline G, • Oxacilline, • Mécillinam, • Céphalosporines, • Aztréonam, • Ertapénème, • Céfidérocol, • Témocilline, • Acide nalidixique, • Sulfamides, • Colistine.",
-  "Staphylocoque": "<u>Les staphylocoques sont naturellement résistants à :</u> • Mécillinam, • Aztréonam, • Ertapénème, • Céfidérocol, • Témocilline, • Acide nalidixique, • Colistine.",
-  "Cocco-bacille à Gram négatif": "<u>Ces Haemophilus, Moraxella, Neisseria et Pasteurella sont naturellement résistants aux antibiotiques suivants :</u> • Oxacilline, • Acide fusidique (sauf Moraxella spp. et Neisseria spp.), • Glycopeptides, • Oxazolidinones, • Lipoglycopeptides.",
-  "Cocci à Gram positif": "<u>Les cocci Gram-positifs sont naturellement résistants aux antibiotiques suivants :</u> • Mécillinam, • Aztréonam, • Céfidérocol, • Témocilline, • Acide nalidixique, • Colistine.",
-  "Anaérobie à Gram négatif": "<u>Les bactéries anaérobies à Gram négatif sont naturellement résistantes aux antibiotiques suivants :</u> • Aminosides (sauf Campylobacter ureolyticus sensible à la gentamicine et à l’amikacine), • Aztréonam (sauf Fusobacterium spp. et C. ureolyticus), • Témocilline, • Acide nalidixique, • Fosfomycine (sauf Fusobacterium spp.), • Triméthoprime, • Lipoglycopeptides.",
-  "Anaérobie à Gram positif": "<u>Les bactéries anaérobies à Gram positif sont naturellement résistantes aux antibiotiques suivants :</u> • Aminosides, • Aztréonam, • Témocilline, • Acide nalidixique, • Fosfomycine, • Triméthoprime, • Colistine."
+  "Enterobacterales": "<u>Les Enterobacterales sont naturellement résistantes aux antibiotiques suivants :</u> • Pénicilline G • Oxacilline • Macrolides (sauf azithromycine pour le traitement des diarrhées à Salmonella et à Shigella) • Kétolides • Lincosamides • Streptogramines • Acide fusidique • Glycopeptides • Oxazolidinones • Lipoglycopeptides • Rifampicine.",
+  "Bacille à Gram négatif non fermentaire": "<u>Les Bacilles à Gram négatifs non-fermentaires sont naturellement résistants aux antibiotiques suivants :</u> • Pénicilline G • Aminopénicillines • Oxacilline • Céphalosporines de 1re génération (C1G) • Céphalosporines de 2e génération (C2G) • Céfotaxime • Ceftriaxone • Ertapénème • Macrolides • Kétolides • Lincosamides • Streptogramines • Acide fusidique • Glycopeptides • Oxazolidinones • Lipoglycopeptides.",
+  "Aeromonas": "<u>Les Aeromonas sont naturellement résistants aux antibiotiques suivants :</u> • Pénicilline G • Oxacilline • Macrolides • Kétolides • Lincosamides • Streptogramines • Acide fusidique • Glycopeptides • Oxazolidinones • Lipoglycopeptides • Rifampicine.",
+  "Campylobacter": "<u>Les Campylobacter sont naturellement résistants à :</u> • Oxacilline • Céphalosporines • Acide fusidique • Glycopeptides • Oxazolidinones • Colistine • lipoglycopeptides.",
+  "Bacille à Gram positif": "<u>Les bactéries Gram-positives sont naturellement résistantes à :</u> • Mécillinam • Aztréonam • Témocilline • Acide nalidixique • Colistine.",
+  "Enterocoque": "<u>Les entérocoques sont naturellement résistants à :</u> • Pénicilline G • Oxacilline • Mécillinam • Céphalosporines • Aztréonam • Ertapénème • Céfidérocol • Témocilline • Acide nalidixique • Sulfamides • Colistine.",
+  "Staphylocoque": "<u>Les staphylocoques sont naturellement résistants à :</u> • Mécillinam • Aztréonam • Ertapénème • Céfidérocol • Témocilline • Acide nalidixique • Colistine.",
+  "Cocco-bacille à Gram négatif": "<u>Ces Haemophilus, Moraxella, Neisseria et Pasteurella sont naturellement résistants aux antibiotiques suivants :</u> • Oxacilline • Acide fusidique (sauf Moraxella spp. et Neisseria spp.) • Glycopeptides • Oxazolidinones • Lipoglycopeptides.",
+  "Cocci à Gram positif": "<u>Les cocci Gram-positifs sont naturellement résistants aux antibiotiques suivants :</u> • Mécillinam • Aztréonam • Céfidérocol • Témocilline • Acide nalidixique • Colistine.",
+  "Anaérobie à Gram négatif": "<u>Les bactéries anaérobies à Gram négatif sont naturellement résistantes aux antibiotiques suivants :</u> • Aminosides (sauf Campylobacter ureolyticus sensible à la gentamicine et à l’amikacine) • Aztréonam (sauf Fusobacterium spp. et C. ureolyticus) • Témocilline • Acide nalidixique • Fosfomycine (sauf Fusobacterium spp.) • Triméthoprime • Lipoglycopeptides.",
+  "Anaérobie à Gram positif": "<u>Les bactéries anaérobies à Gram positif sont naturellement résistantes aux antibiotiques suivants :</u> • Aminosides • Aztréonam • Témocilline • Acide nalidixique • Fosfomycine • Triméthoprime • Colistine."
 };
 const bacteriaData = {
   "Achromobacter xylosoxidans": {
